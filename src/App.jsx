@@ -9,12 +9,10 @@ import About from './pages/About';
 import Testimonials from './pages/Testimonials';
 import Resume from './pages/Resume';
 import NotFound from './pages/NotFound';
-import AnimatedBackground from './components/AnimatedBackground';
 
 const App = () => {
   return (
     <Router>
-      <AnimatedBackground />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/portfolio" element={<Portfolio />} />
