@@ -3,7 +3,7 @@ import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import AnimatedBackground from '../components/AnimatedBackground';
+import AnimatedGalaxyBackground from '../components/AnimatedGalaxyBackground';
 
 const Portfolio = () => {
   const [projects, setProjects] = useState([]);
@@ -22,7 +22,7 @@ const Portfolio = () => {
   return (
     <div className="relative">
       {/* 3D Animated Background */}
-      <AnimatedBackground />
+      <AnimatedGalaxyBackground />
       
       <Navbar />
       
