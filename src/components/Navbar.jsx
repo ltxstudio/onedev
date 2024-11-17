@@ -26,6 +26,9 @@ const Navbar = () => {
           <Link to="/blog" className="hover:text-gray-200 text-lg transition-all">Blog</Link>
           <Link to="/about" className="hover:text-gray-200 text-lg transition-all">About</Link>
           <Link to="/contact" className="hover:text-gray-200 text-lg transition-all">Contact</Link>
+          <Link to="/services" className="hover:text-gray-200 text-lg transition-all">Services</Link>
+          <Link to="/testimonials" className="hover:text-gray-200 text-lg transition-all">Testimonials</Link>
+          <Link to="/resume" className="hover:text-gray-200 text-lg transition-all">Resume</Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -47,6 +50,9 @@ const Navbar = () => {
           <Link to="/blog" onClick={() => setIsMobile(false)} className="hover:text-gray-200 text-lg">Blog</Link>
           <Link to="/about" onClick={() => setIsMobile(false)} className="hover:text-gray-200 text-lg">About</Link>
           <Link to="/contact" onClick={() => setIsMobile(false)} className="hover:text-gray-200 text-lg">Contact</Link>
+          <Link to="/services" onClick={() => setIsMobile(false)} className="hover:text-gray-200 text-lg">Services</Link>
+          <Link to="/resume" onClick={() => setIsMobile(false)} className="hover:text-gray-200 text-lg">Resume</Link>
+          <Link to="/testimonials" onClick={() => setIsMobile(false)} className="hover:text-gray-200 text-lg">Testimonials</Link>
         </div>
       )}
     </motion.nav>
