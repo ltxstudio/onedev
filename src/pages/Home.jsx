@@ -14,7 +14,7 @@ const Home = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="h-screen flex flex-col items-center justify-center text-center text-white relative px-6">
+      <section className="h-screen flex flex-col items-center justify-center text-center text-black relative px-6">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
