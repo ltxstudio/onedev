@@ -3,12 +3,14 @@ import { Link } from 'react-scroll';
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import AnimatedBackground from '../components/AnimatedBackground';
 
 const Home = () => {
   return (
     <div>
+      <AnimatedBackground />
       <Navbar />
-      <section className="bg-gradient-to-r from-primary to-secondary h-screen flex items-center justify-center text-center text-white">
+      <section className="h-screen flex items-center justify-center text-center text-white relative z-10">
         <motion.h1
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -26,8 +28,11 @@ const Home = () => {
           Learn More About Me
         </Link>
       </section>
-      
-      <section id="about" className="py-20 text-center bg-light">
+
+      <section
+        id="about"
+        className="py-20 text-center bg-light relative z-10"
+      >
         <motion.h2
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
