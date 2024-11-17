@@ -14,7 +14,7 @@ const Home = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="h-screen flex flex-col items-center justify-center text-center text-white relative z-10 px-6">
+      <section className="h-screen flex flex-col items-center justify-center text-center text-black relative z-10 px-6">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -37,7 +37,7 @@ const Home = () => {
           to="about"
           smooth={true}
           duration={500}
-          className="bg-white text-dark py-3 px-8 rounded-full font-semibold shadow-lg hover:bg-light transition-all"
+          className="bg-black text-white py-3 px-8 rounded-full font-semibold shadow-lg hover:bg-gray-800 transition-all"
         >
           Learn More About Me
         </Link>
@@ -49,7 +49,7 @@ const Home = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          className="text-3xl md:text-4xl font-bold mb-6"
+          className="text-3xl md:text-4xl font-bold mb-6 text-black"
         >
           About Me
         </motion.h2>
@@ -58,7 +58,7 @@ const Home = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="text-lg md:text-xl text-dark max-w-3xl mx-auto"
+          className="text-lg md:text-xl text-black max-w-3xl mx-auto"
         >
           I am a passionate web developer skilled in React, JavaScript, Node.js, and more. I enjoy building impactful applications that enhance user experience.
         </motion.p>
