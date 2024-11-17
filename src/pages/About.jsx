@@ -8,6 +8,7 @@ import Footer from '../components/Footer';
 const About = () => {
   return (
     <div>
+      <Navbar />
       {/* 3D Galaxy Background */}
       <div className="absolute inset-0 z-[-1]">
         <Canvas>
