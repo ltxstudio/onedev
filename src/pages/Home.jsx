@@ -8,7 +8,6 @@ import AnimatedBackground from '../components/AnimatedBackground';
 const Home = () => {
   return (
     <div>
-      <AnimatedBackground />
       <Navbar />
       <section className="h-screen flex items-center justify-center text-center text-white relative z-10">
         <motion.h1
@@ -28,6 +27,8 @@ const Home = () => {
           Learn More About Me
         </Link>
       </section>
+
+      <AnimatedBackground />
 
       <section
         id="about"
