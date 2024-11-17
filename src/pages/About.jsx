@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaReact, FaJsSquare, FaNodeJs, FaCss3Alt, FaPython, FaGitAlt } from 'react-icons/fa';
 import { DiMongodb, DiNodejs, DiDocker, DiPostgresql } from 'react-icons/di';
@@ -7,11 +7,78 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 const About = () => {
+  useEffect(() => {
+    const canvas = document.getElementById('spaceCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // Set canvas size to full screen
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    // Star particle properties
+    const stars = [];
+    const numStars = 300;
+
+    class Star {
+      constructor(x, y, size, speed) {
+        this.x = x;
+        this.y = y;
+        this.size = size;
+        this.speed = speed;
+      }
+
+      // Update star position
+      update() {
+        this.y += this.speed;
+        if (this.y > canvas.height) {
+          this.y = 0;
+          this.x = Math.random() * canvas.width;
+        }
+      }
+
+      // Draw the star
+      draw() {
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.closePath();
+        ctx.fill();
+      }
+    }
+
+    // Generate stars
+    function generateStars() {
+      for (let i = 0; i < numStars; i++) {
+        const size = Math.random() * 2 + 1;
+        const x = Math.random() * canvas.width;
+        const y = Math.random() * canvas.height;
+        const speed = Math.random() * 0.5 + 0.2;
+        stars.push(new Star(x, y, size, speed));
+      }
+    }
+
+    // Animate the stars
+    function animateStars() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas
+      stars.forEach(star => {
+        star.update();
+        star.draw();
+      });
+      requestAnimationFrame(animateStars);
+    }
+
+    generateStars();
+    animateStars();
+  }, []);
+
   return (
     <div className="relative">
 
       {/* Navbar Component */}
       <Navbar />
+
+      {/* Fullscreen Space Background */}
+      <canvas id="spaceCanvas" className="absolute top-0 left-0 z-0"></canvas>
 
       {/* About Content Section */}
       <motion.section
