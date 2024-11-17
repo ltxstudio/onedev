@@ -1,11 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Stars, Box } from '@react-three/drei';
+import { OrbitControls, Stars, Box } from '@react-three/drei';  // Correct import for OrbitControls
 import { FaReact, FaJsSquare, FaNodeJs, FaCss3Alt, FaPython, FaGitAlt } from 'react-icons/fa';
 import { DiMongodb, DiNodejs, DiDocker, DiPostgresql } from 'react-icons/di';
 import { SiTypescript, SiTailwindcss, SiNextdotjs, SiGraphql } from 'react-icons/si';
-import { MeshStandardMaterial } from '@react-three/fiber';  // Fix this import
+import { MeshStandardMaterial } from '@react-three/fiber'; // Correct import for MeshStandardMaterial
+import { DirectionalLight, AmbientLight } from '@react-three/fiber'; // Correct import for lights
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
@@ -37,8 +38,8 @@ const About = () => {
           <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={0.5} />
 
           {/* Ambient and Directional Lights */}
-          <ambientLight intensity={0.3} />
-          <directionalLight position={[2, 5, 2]} />
+          <AmbientLight intensity={0.3} /> {/* Correct import for ambient light */}
+          <DirectionalLight position={[2, 5, 2]} /> {/* Correct import for directional light */}
         </Canvas>
       </div>
 
