@@ -1,17 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    // Check for user's system preference for dark mode
+    const userPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setDarkMode(userPrefersDark);
+  }, []);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
 
   return (
     <motion.nav
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
-      className="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-4 shadow-lg fixed w-full top-0 z-50"
+      className={`${
+        darkMode ? 'bg-gray-900 text-white' : 'bg-gradient-to-r from-blue-600 to-blue-800 text-white'
+      } p-4 shadow-lg fixed w-full top-0 z-50 transition-all`}
     >
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
@@ -32,9 +45,14 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden">
-          <button onClick={() => setIsMobile(!isMobile)}>
-            <FaBars className="text-2xl hover:text-gray-200 transition-all" />
+        <div className="md:hidden flex items-center space-x-4">
+          {/* Dark Mode Toggle */}
+          <button onClick={toggleDarkMode} className="text-2xl hover:text-gray-200">
+            {darkMode ? '🌙' : '🌞'}
+          </button>
+
+          <button onClick={() => setIsMobile(!isMobile)} className="text-2xl hover:text-gray-200">
+            <FaBars />
           </button>
         </div>
       </div>
