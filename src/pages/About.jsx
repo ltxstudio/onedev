@@ -1,47 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Stars, Box } from '@react-three/drei';  // Correct import for OrbitControls
 import { FaReact, FaJsSquare, FaNodeJs, FaCss3Alt, FaPython, FaGitAlt } from 'react-icons/fa';
 import { DiMongodb, DiNodejs, DiDocker, DiPostgresql } from 'react-icons/di';
 import { SiTypescript, SiTailwindcss, SiNextdotjs, SiGraphql } from 'react-icons/si';
-import { MeshStandardMaterial } from '@react-three/fiber'; // Correct import for MeshStandardMaterial
-import { DirectionalLight, AmbientLight } from '@react-three/fiber'; // Correct import for lights
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 const About = () => {
   return (
     <div className="relative">
-
-      {/* 3D Background with rotating cubes */}
-      <div className="absolute inset-0 z-[-1]">
-        <Canvas>
-          {/* Starry Sky */}
-          <Stars
-            radius={100}
-            depth={50}
-            count={5000}
-            factor={4}
-            fade
-          />
-
-          {/* Rotating cubes for background animation */}
-          <Box args={[2, 2, 2]} position={[-2, 1, -4]} rotation={[0.5, 0.5, 0]}>
-            <MeshStandardMaterial color="#ff6347" />
-          </Box>
-          <Box args={[1.5, 1.5, 1.5]} position={[3, -2, -5]} rotation={[0.5, 1, 0]}>
-            <MeshStandardMaterial color="#1E90FF" />
-          </Box>
-
-          {/* Orbit Controls for interaction */}
-          <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={0.5} />
-
-          {/* Ambient and Directional Lights */}
-          <AmbientLight intensity={0.3} /> {/* Correct import for ambient light */}
-          <DirectionalLight position={[2, 5, 2]} /> {/* Correct import for directional light */}
-        </Canvas>
-      </div>
 
       {/* Navbar Component */}
       <Navbar />
