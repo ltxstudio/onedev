@@ -3,7 +3,7 @@ import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import AnimatedGalaxyBackground from '../components/AnimatedGalaxyBackground';
+import AnimatedBackgroundGrid from '../components/AnimatedBackgroundGrid';
 
 const Portfolio = () => {
   const [projects, setProjects] = useState([]);
