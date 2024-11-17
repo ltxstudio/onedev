@@ -8,7 +8,7 @@ import AnimatedBackground from '../components/AnimatedBackground';
 const Home = () => {
   return (
     <div>
-      {/* 3D Background */}
+      {/* 3D Animated Galaxy Background */}
       <AnimatedBackground />
       
       <Navbar />
